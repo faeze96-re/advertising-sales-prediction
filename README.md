@@ -35,11 +35,9 @@ The target variable is:
 ## Feature Selection
 
 OLS results were used to examine the statistical significance of the predictors.
-
-Newspaper was excluded from the final regression model because its coefficient was close to zero and its p-value was high.
-
+The initial model included TV, Radio, and Newspaper.
+Newspaper was removed from the final model because its coefficient was close to zero and its p-value was high (p ≈ 0.954). Removing Newspaper had almost no effect on R², while Adjusted R² slightly improved.
 The final model uses:
-
 - TV
 - Radio
 
@@ -51,6 +49,36 @@ The model is evaluated using:
 - Adjusted R²
 - Mean Absolute Error (MAE)
 - Mean Squared Error (MSE)
+## Results
+
+The final multiple linear regression model uses TV and Radio advertising expenditure to predict Sales.
+
+### Test Set Performance
+
+| Metric | Value |
+|---|---:|
+| R² | 0.908 |
+| MAE | 1.27 |
+| MSE | 2.85 |
+| RMSE | 1.69 |
+
+The model explains approximately 91% of the variance in Sales on the test set.
+
+### Model Coefficients
+
+The final model uses:
+
+- TV
+- Radio
+
+Newspaper was excluded from the final model because its coefficient was close to zero and its p-value was high in the OLS analysis.
+
+### Additional Analysis
+
+- VIF was used to check multicollinearity.
+- Residual analysis was performed.
+- Shapiro-Wilk test was used to assess residual normality.
+- 5-fold cross-validation was performed to evaluate model stability.
 
 ## Tools and Libraries
 
